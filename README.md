@@ -1,12 +1,44 @@
-# React + Vite
+# 🛍️ EcommerceApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple e-commerce web application built with **React**, **React Router DOM**, **Axios**, and **TailwindCSS**.  
+This app fetches product data from [FakeStoreAPI](https://fakestoreapi.com/) and provides a smooth shopping experience with features like product listing, product details, and cart management.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 📦 **Product Listing** – Fetch products dynamically from [FakeStoreAPI](https://fakestoreapi.com/)  
+- 🔎 **Product Details Page** – View complete product information  
+- 🛒 **Shopping Cart** – Add/remove products and view cart summary  
+- 🔄 **Dynamic Routing** – Powered by **React Router DOM**  
+- ⚡ **API Handling** – Using **Axios** for fetching and managing data  
+- 🎨 **Modern UI** – Styled with **TailwindCSS**  
+- 📱 **Responsive Design** – Mobile-first approach  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** [React](https://react.dev/)  
+- **Routing:** [React Router DOM](https://reactrouter.com/)  
+- **API Handling:** [Axios](https://axios-http.com/)  
+- **Styling:** [TailwindCSS](https://tailwindcss.com/)  
+- **Fake API:** [FakeStoreAPI](https://fakestoreapi.com/)
+
+---
+
+## 📂 Project Structure
+
+```bash
+fasionforward/
+│── public/              # Static assets
+│── src/
+│   ├── components/      # Reusable components (Navbar, ProductCard, etc.)
+│   ├── pages/           # Page components (Home, ProductDetails, Cart)
+│   ├── hooks/           # Custom hooks (e.g., useFetch)
+│   ├── App.jsx          # Root component with Router
+│   ├── main.jsx         # Entry point
+│   └── index.css        # Global styles with Tailwind
+│── package.json
+│── tailwind.config.js
+│── README.md

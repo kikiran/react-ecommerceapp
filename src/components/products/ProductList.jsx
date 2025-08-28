@@ -14,10 +14,10 @@ const ProductList = () => {
  
 
   return (
-		<div className="px-5 py-3 flex flex-wrap gap-2 text-justify">
+		<div className="px-5 py-3 flex flex-wrap gap-5 text-justify">
 			{data &&
 				data?.products?.map((product) => (
-					<ProductCard key={product?.id} product={product}  />
+					<ProductCard key={product?.id} product={product} />
 				))}
 		</div>
   );
