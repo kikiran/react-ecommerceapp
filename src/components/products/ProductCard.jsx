@@ -1,10 +1,15 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = (product) => {
+	const { id, title, image, price } = product.product;
+	const navigate = useNavigate();
 
-    const { id, title, image, price } = product.product;
+	const handleViewProduct = (id) => {
+		navigate(`/product/${id}`);
+	};
 
-  return (
+	return (
 		<div className="w-full max-w-[280px] bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
 			<a href={`/product/${id}`}>
 				<img
@@ -27,14 +32,14 @@ const ProductCard = (product) => {
 					<a
 						href="#"
 						className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-						onClick={() => alert(id)}
+						onClick={() => handleViewProduct(id)}
 					>
 						View
 					</a>
 				</div>
 			</div>
 		</div>
-  );
-}
+	);
+};
 
 export default ProductCard

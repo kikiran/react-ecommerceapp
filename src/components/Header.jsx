@@ -3,7 +3,7 @@ import { BsCart4 } from "react-icons/bs";
 import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ cart }) => {
 	const { data, loading, error } = useFetch(
 		"https://fakestoreapi.in/api/products/category"
 	);
@@ -29,8 +29,10 @@ const Header = () => {
 							{category}
 						</a>
 					))}
-
-				<BsCart4 className="w-5 h-5 cursor-pointer" />
+				<strong className="mt-[-15px] text-blue-600">
+					{cart && cart?.length !== 0 && cart?.length}
+				</strong>
+				<BsCart4 className="w-5 h-5 cursor-pointer absolute" />
 			</div>
 		</div>
 	);

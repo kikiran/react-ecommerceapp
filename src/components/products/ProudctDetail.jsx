@@ -2,7 +2,7 @@ import React from "react";
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 
-const ProudctDetail = () => {
+const ProudctDetail = ({ cart, setCart }) => {
 	const { id } = useParams();
 	const { data, loading, error } = useFetch(
 		`https://fakestoreapi.in/api/products/${id}`
@@ -11,7 +11,9 @@ const ProudctDetail = () => {
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error: {error.message}</p>;
 
-	console.log("++++++++++++++++++", data);
+	const handleAddToCart = (product) => {
+		setCart([...cart, product]);
+	};
 
 	return (
 		<div className="p-5 flex flex-row gap-2">
@@ -31,7 +33,10 @@ const ProudctDetail = () => {
 				<h1 className="font-medium text-2xl ">
 					Price: ${data?.product?.price}
 				</h1>
-				<button className="font-bold p-4 bg-blue-400 text-white shadow-md rounded-sm cursor-pointer w-1/3">
+				<button
+					className="font-bold p-4 bg-blue-400 text-white shadow-md rounded-sm cursor-pointer w-1/3"
+					onClick={() => handleAddToCart(data?.product)}
+				>
 					Add to cart
 				</button>
 			</div>
