@@ -11,7 +11,6 @@ import CategoryPage from "./pages/CategoryPage";
 function App() {
 	const [cart, setCart] = useState([]);
 
-	console.log("Cart items:", cart);
 	return (
 		<div>
 			<Header cart={cart} setCart={setCart} />

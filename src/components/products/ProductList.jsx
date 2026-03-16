@@ -4,23 +4,21 @@ import ProductCard from './ProductCard';
 
 const ProductList = () => {
 
-    const { data, loading, error } = useFetch(
-		"https://fakestoreapi.in/api/products"
-	);
+		const url = import.meta.env.VITE_APP_URL;
 
-    if (loading) return <h1>Loading...</h1>;
-    if (error) return <p>Error: {error.message}</p>;
+		const { data, loading, error } = useFetch(url);
 
- 
+		if (loading) return <h1>Loading...</h1>;
+		if (error) return <p>Error: {error.message}</p>;
 
-  return (
-		<div className="px-5 py-3 flex flex-wrap gap-5 text-justify">
-			{data &&
-				data?.products?.map((product) => (
-					<ProductCard key={product?.id} product={product} />
-				))}
-		</div>
-  );
+		return (
+			<div className="px-5 py-3 flex flex-wrap gap-5 text-justify">
+				{data &&
+					data?.map((product) => (
+						<ProductCard key={product?.id} product={product} />
+					))}
+			</div>
+		);
 }
 
 export default ProductList

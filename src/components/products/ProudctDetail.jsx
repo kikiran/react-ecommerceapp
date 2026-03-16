@@ -4,9 +4,9 @@ import { useParams } from "react-router-dom";
 
 const ProudctDetail = ({ cart, setCart }) => {
 	const { id } = useParams();
-	const { data, loading, error } = useFetch(
-		`https://fakestoreapi.in/api/products/${id}`
-	);
+	const url = import.meta.env.VITE_APP_URL;
+
+	const { data, loading, error } = useFetch(`${url}/${id}`);
 
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error: {error.message}</p>;

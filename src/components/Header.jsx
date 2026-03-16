@@ -4,9 +4,8 @@ import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
 
 const Header = ({ cart }) => {
-	const { data, loading, error } = useFetch(
-		"https://fakestoreapi.in/api/products/category"
-	);
+	const url = import.meta.env.VITE_APP_URL;
+	const { data, loading, error } = useFetch(`${url}/categories`);
 
 	return (
 		<div className="flex items-center justify-between border-b border-solid border-b-[#f4f0f0] px-10 py-3">
@@ -20,7 +19,7 @@ const Header = ({ cart }) => {
 			</div>
 			<div className="flex flex-1 justify-end gap-8">
 				{data &&
-					data?.categories?.map((category, index) => (
+					data?.map((category, index) => (
 						<a
 							href={`/category/${category}`}
 							className="text-[#181111] hover:text-[#3811fc] uppercase font-medium"
