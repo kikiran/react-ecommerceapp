@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: 584868043218.dkr.ecr.us-east-1.amazonaws.com/react-app:latest
+        image: 584868043218.dkr.ecr.us-east-1.amazonaws.com/react-app:${{ github.sha }}
+        imagePullPolicy: Always
 
         ports:
         - containerPort: 80
