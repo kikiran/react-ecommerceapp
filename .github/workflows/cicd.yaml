@@ -31,7 +31,9 @@ jobs:
 
       # 🐳 Build Docker Image
       - name: Build Image
-        run: docker build -t react-app .
+        run:  docker build \
+              --build-arg VITE_APP_URL=https://fakestoreapi.com/products \
+              -t react-app .
 
 
       # 🏷️ Tag Image

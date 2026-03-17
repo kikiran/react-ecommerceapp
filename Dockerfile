@@ -12,6 +12,9 @@ RUN npm install
 # Copy source code
 COPY . .
 
+ARG VITE_APP_URL
+ENV VITE_APP_URL=$VITE_APP_URL
+
 # Build Vite app
 RUN npm run build
 

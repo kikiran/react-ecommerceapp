@@ -23,9 +23,4 @@ spec:
         ports:
         - containerPort: 80
 
-        env: 
-        - name: VITE_APP_URL
-          valueFrom:
-            configMapKeyRef:
-              name: react-config
-              key: VITE_APP_URL
+     
