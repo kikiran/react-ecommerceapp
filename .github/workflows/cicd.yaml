@@ -34,21 +34,21 @@ jobs:
         run: |
           docker build \
             --build-arg VITE_APP_URL=https://fakestoreapi.com \
-            -t react-app \
+            -t react-app:${{ github.sha }} \
             .
 
       # 🏷️ Tag Image
       - name: Tag Image
         run: |
-          docker tag react-app:latest \
-          ${{ secrets.ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/react-app:latest
+          docker tag react-app:${{ github.sha }} \
+          ${{ secrets.ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/react-app:${{ github.sha }}
 
 
       # 🚀 Push Image
       - name: Push Image
         run: |
           docker push \
-          ${{ secrets.ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/react-app:latest
+          ${{ secrets.ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/react-app:${{ github.sha }}
 
       # 📦 Deploy to Kubernetes
 

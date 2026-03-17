@@ -13,9 +13,10 @@ RUN npm install
 # Copy source code
 COPY . .
 
-
 ARG VITE_APP_URL
-ENV VITE_APP_URL=$VITE_APP_URL
+
+# Create .env.production dynamically
+RUN echo "VITE_APP_URL=$VITE_APP_URL" > .env.production
 
 # Build Vite app
 
