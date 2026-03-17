@@ -15,14 +15,9 @@ COPY . .
 
 ARG VITE_APP_URL
 
-# Create .env.production dynamically
-RUN echo "VITE_APP_URL=$VITE_APP_URL" > .env.production
-
-RUN cat .env.production
-
 # Build Vite app
+RUN VITE_APP_URL=$VITE_APP_URL npm run build
 
-RUN npm run build
 
 ########## Production Stage ##########
 
