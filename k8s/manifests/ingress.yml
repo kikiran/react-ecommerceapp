@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: react-ingress
+
+  annotations:
+    kubernetes.io/ingress.class: nginx
+
+spec:
+
+  rules:
+    - http:
+        paths:
+
+        - path: /
+          pathType: Prefix
+
+          backend:
+            service:
+              name: react-service
+              port:
+                number: 80
