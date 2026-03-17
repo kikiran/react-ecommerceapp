@@ -18,6 +18,8 @@ ARG VITE_APP_URL
 # Create .env.production dynamically
 RUN echo "VITE_APP_URL=$VITE_APP_URL" > .env.production
 
+RUN cat .env.production
+
 # Build Vite app
 
 RUN npm run build
