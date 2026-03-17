@@ -33,7 +33,7 @@ jobs:
       - name: Build Image
         run: |
           docker build \
-            -- no-cache \
+            --no-cache \
             --build-arg VITE_APP_URL=https://fakestoreapi.com \
             -t react-app:${{ github.sha }} \
             .
