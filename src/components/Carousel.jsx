@@ -13,28 +13,28 @@ const Carousel = () => {
 		<Slider {...settings} className="px-5 m-10">
 			<div>
 				<img
-					src="images/slide1.jpg"
+					src="/images/slide1.jpg"
 					alt="Slide1"
 					className="h-96 w-full object-cover"
 				/>
 			</div>
 			<div>
 				<img
-					src="images/slide2.jpg"
+					src="/images/slide2.jpg"
 					alt="Slide1"
 					className="w-full h-96 object-cover"
 				/>
 			</div>
 			<div>
 				<img
-					src="images/slide3.jpg"
+					src="/images/slide3.jpg"
 					alt="Slide1"
 					className="w-full h-96 object-cover"
 				/>
 			</div>
 			<div>
 				<img
-					src="images/slide4.jpg"
+					src="/images/slide4.jpg"
 					alt="Slide1"
 					className="w-full h-96 object-cover"
 				/>

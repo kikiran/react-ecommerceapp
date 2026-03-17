@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 
 const ProductList = () => {
 
-		const url = import.meta.env.VITE_APP_URL;
+		const url = import.meta.env.VITE_APP_URL || "https://fakestoreapi.com";
 		const finalURL = `${url}/products`;
 
 		const { data, loading, error } = useFetch(finalURL);

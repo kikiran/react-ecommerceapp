@@ -6,7 +6,7 @@ import ProductCard from '../components/products/ProductCard';
 
 const CategoryPage = () => {
 	const { categoryName } = useParams();
-	const url = import.meta.env.VITE_APP_URL;
+	const url = import.meta.env.VITE_APP_URL || "https://fakestoreapi.com";
 
 	const { data, loading, error } = useFetch(
 		`${url}/products/category/${categoryName}`,

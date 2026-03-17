@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const ProudctDetail = ({ cart, setCart }) => {
 	const { id } = useParams();
-	const url = import.meta.env.VITE_APP_URL;
+	const url = import.meta.env.VITE_APP_URL || "https://fakestoreapi.com";
 
 	const { data, loading, error } = useFetch(`${url}/products/${id}`);
 
@@ -15,7 +15,6 @@ const ProudctDetail = ({ cart, setCart }) => {
 		setCart([...cart, product]);
 	};
 
-	console.log(data);
 
 	return (
 		<div className="p-5 flex flex-row gap-2">
