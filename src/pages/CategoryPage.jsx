@@ -9,7 +9,7 @@ const CategoryPage = () => {
 	const url = import.meta.env.VITE_APP_URL;
 
 	const { data, loading, error } = useFetch(
-		`${url}/category/${categoryName}`,
+		`${url}/products/category/${categoryName}`,
 	);
 
 	if (loading) return <h1>Loading...</h1>;

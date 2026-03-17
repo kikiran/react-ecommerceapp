@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Header = ({ cart }) => {
 	const url = import.meta.env.VITE_APP_URL;
-	const { data, loading, error } = useFetch(`${url}/categories`);
+	const { data, loading, error } = useFetch(`${url}/products/categories`);
 
 	return (
 		<div className="flex items-center justify-between border-b border-solid border-b-[#f4f0f0] px-10 py-3">

@@ -5,8 +5,9 @@ import ProductCard from './ProductCard';
 const ProductList = () => {
 
 		const url = import.meta.env.VITE_APP_URL;
+		const finalURL = `${url}/products`;
 
-		const { data, loading, error } = useFetch(url);
+		const { data, loading, error } = useFetch(finalURL);
 
 		if (loading) return <h1>Loading...</h1>;
 		if (error) return <p>Error: {error.message}</p>;
