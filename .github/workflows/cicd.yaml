@@ -60,10 +60,15 @@ jobs:
           --region ${{ secrets.AWS_REGION }} \
           --name react-app-cluster
       
+      - name: Update Deployment Image
+        run: |
+          kubectl set image deployment/react-app \
+          react-app=${{ secrets.ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/react-app:${{ github.sha }}
+
 
       - name: Deploy to Kubernetes
         run: |
-          kubectl apply -f k8s/manifests/deployment.yml
+          
           kubectl apply -f k8s/manifests/service.yml
           kubectl apply -f k8s/manifests/ingress.yml
           kubectl apply -f k8s/manifests/hpa.yml
