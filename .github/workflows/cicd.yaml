@@ -49,13 +49,13 @@ jobs:
 
       # 📦 Deploy to Kubernetes
 
-      - name: Install Helm
+      
+      - name: Update kubeconfig
         run: |
-          curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-
-      - name: Install NGINX Ingress Controller
-        run: |
-          kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.1/deploy/static/provider/aws/deploy.yaml
+          aws eks update-kubeconfig \
+          --region ${{ secrets.AWS_REGION }} \
+          --name react-app-cluster
+      
 
       - name: Deploy to Kubernetes
         run: |
