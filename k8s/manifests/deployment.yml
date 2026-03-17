@@ -6,13 +6,6 @@ metadata:
 spec:
   replicas: 2
 
-  env:
-  - name: VITE_APP_URL
-    valueFrom:
-      configMapKeyRef:
-        name: react-config
-        key: VITE_APP_URL
-
   selector:
     matchLabels:
       app: react-app
@@ -28,4 +21,11 @@ spec:
         image: 584868043218.dkr.ecr.us-east-1.amazonaws.com/react-app:latest
 
         ports:
-        - containerPort: 80 
+        - containerPort: 80
+
+        env: 
+        - name: VITE_APP_URL
+          valueFrom:
+            configMapKeyRef:
+              name: react-config
+              key: VITE_APP_URL
